@@ -55,9 +55,16 @@ type CreateConfigMap struct {
 type NameSpace struct {
 	NameSpace string `json:"name" binding:"required"`
 }
+
 type UpdateNameSpace struct {
 	NameSpaceName string `json:"name" binding:"required"`
 	//Status        string `json:"status" `
 	Annotations string `json:"annotations"`
 	Labels      string `json:"labels"`
 }
+
+//type UpdateNameSpace struct {
+//	NameSpaceName string            `json:"nameSpaceName" binding:"required"`
+//	Annotations   map[string]string `json:"annotations"`
+//	Labels        map[string]string `json:"labels"`
+//}

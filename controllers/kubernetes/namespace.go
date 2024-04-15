@@ -65,7 +65,9 @@ func UpdateNamespace(ctx *gin.Context) {
 		global.ReturnContext(ctx).Failed("failed", "请传入必填参数name")
 		return
 	}
+
 	ns, err := service.NewK8sInterface().UpdateNamespace(cid, params.NameSpaceName, params.Annotations, params.Labels)
+	//ns, err := service.NewK8sInterface().UpdateNamespace(cid, params.NameSpaceName, string(annotationsStr), string(labelsStr))
 	if err != nil {
 		global.ReturnContext(ctx).Failed("failed", err.Error())
 		return

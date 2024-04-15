@@ -26,6 +26,7 @@ func (k *k8sCluster) ListK8sConfig(cid, NameSpace string) (restful []map[string]
 		global.TPLogger.Error("当前集群不存在：", errors.New(""))
 		return nil, errors.New("当前集群不存在")
 	} else {
+
 		cml, err := c.CoreV1().ConfigMaps(NameSpace).List(context.Background(), metav1.ListOptions{})
 		if err != nil {
 			global.TPLogger.Error("获取ConfigMaps失败：", err)
